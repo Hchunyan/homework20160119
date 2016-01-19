@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oBtn = document.getElementsByTagName('input')[0];
+	var id = navigator.geolocation.watchPosition(function(pos){
+		alert(pos.coords.latitude+','+pos.coords.longitude);
+	},function(err){
+		alert('失败');
+	});
+	oBtn.onclick=function(){
+		navigator.geolocation.clearWatch(id);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="清除" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
